@@ -3,15 +3,22 @@
   "version": 1,
   "newProjectRoot": "projects",
   "cli": {
-    "defaultCollection": "@nativescript/schematics"
+    "defaultCollection": "@nativescript/schematics",
+    "analytics": "75bbc568-9519-4246-9c38-e9c9530c15b5"
   },
   "projects": {
-    "blank": {
+    "pokemon-random": {
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "ns"
     }
   },
-  "defaultProject": "blank"
+  "defaultProject": "pokemon-random"
 }

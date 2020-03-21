@@ -1,7 +1,32 @@
-<ActionBar>
-    <Label text="Home"></Label>
+
+<ActionBar text="test">
+  <StackLayout orientation="horizontal" android:horizontalAlignment="left">
+    <Label text="Pokemon Random" class="action-label"></Label>
+  </StackLayout>
 </ActionBar>
 
-<GridLayout>
-    <!-- Add your page content here -->
-</GridLayout>
+<StackLayout orientation="vertical">
+  
+  <Image
+    height="150" width="150" class="pokemon-image"
+    [src]="pokemon?.sprites?.front_default">
+  </Image>
+
+  <Label 
+    textAlignment="center" textTransform="capitalize" 
+    [text]="pokemon?.name" class="pokemon-name"></Label>
+    
+  <Button class="-primary search-button" text="Search" (tap)="search()"></Button>
+
+  <Label text="TYPES" class="type-header"></Label>
+
+  <ListView [items]="pokemon?.types" height="150" class="type-list">
+    <ng-template let-item="item" let-i="index">
+      <StackLayout class="-separator">
+        <Label [text]="item?.type?.name" textTransform="capitalize" class="type-label"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+  
+</StackLayout>
+
